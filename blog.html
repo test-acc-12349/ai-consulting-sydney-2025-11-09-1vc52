@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Consulting Sydney Blog - Insights on business automation, AI integration, and process optimization strategies.">
+    <meta name="keywords" content="AI Blog, Business Automation, Process Automation, AI Integration, Sydney, Automation Insights">
+    <meta name="author" content="AI Consulting Sydney">
+    <meta property="og:title" content="AI Consulting Sydney Blog - Automation & AI Insights">
+    <meta property="og:description" content="Discover expert insights on AI-powered automation, business transformation, and intelligent process optimization.">
+    <meta property="og:type" content="website">
+    <title>AI Consulting Sydney Blog - Automation & AI Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+        }
+        
+        .primary-color {
+            color: #FF5A5F;
+        }
+        
+        .primary-bg {
+            background-color: #FF5A5F;
+        }
+        
+        .secondary-bg {
+            background-color: #1A1A1A;
+        }
+        
+        .accent-color {
+            color: #FFD166;
+        }
+        
+        .accent-bg {
+            background-color: #FFD166;
+        }
+        
+        .btn-primary {
+            background-color: #FF5A5F;
+            color: white;
+            border-radius: 9999px;
+            padding: 12px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background-color: #E54A4F;
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 90, 95, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #FFD166;
+            color: #1A1A1A;
+            border-radius: 9999px;
+            padding: 12px 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #FFC847;
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 209, 102, 0.3);
+        }
+        
+        .card-base {
+            background-color: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .card-base:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+        
+        .section-heading {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #1A1A1A;
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 1.875rem;
+            }
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+        
+        .blog-date {
+            font-size: 0.875rem;
+            color: #FF5A5F;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        
+        .blog-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        .blog-excerpt {
+            color: #666666;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+        
+        .featured-blog-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 48px;
+            border-left: 5px solid #FF5A5F;
+        }
+        
+        .featured-blog-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+        
+        .featured-blog-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        .featured-blog-excerpt {
+            color: #555555;
+            font-weight: 500;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-size: 1.0625rem;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.hidden {
+            display: none;
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFF5F5;
+            border-radius: 12px;
+            color: #FF5A5F;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.5) 100%);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52" class="text-2xl font-bold primary-color">
+                    <i data-lucide="zap" class="inline-block mr-2"></i>AI Consulting
+                </a>
+            </div>
+            
+            <a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52" class="font-medium text-gray-700 hover:primary-color transition-colors duration-300">
+                ← Back
+            </a>
+        </nav>
+    </header>
+
+    <!-- Blog Header Section -->
+    <section class="py-20 md:py-28 lg:py-32 bg-gradient-to-br from-white via-white to-gray-50 overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-[#FF5A5F] rounded-full mix-blend-multiply filter blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-72 h-72 bg-[#FFD166] rounded-full mix-blend-multiply filter blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+                    Our <span class="primary-color">Blog</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 font-medium max-w-3xl mx-auto">
+                    Discover expert insights on AI-powered automation, intelligent process optimization, and business transformation strategies that drive real results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Purpose Section -->
+    <section class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="feature-icon mx-auto mb-6">
+                        <i data-lucide="lightbulb" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Industry Insights</h3>
+                    <p class="text-gray-600 font-medium">
+                        Stay informed with the latest trends, best practices, and emerging technologies in AI and business automation.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="feature-icon mx-auto mb-6">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Practical Guides</h3>
+                    <p class="text-gray-600 font-medium">
+                        Learn actionable strategies and implementation frameworks to transform your business operations effectively.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="feature-icon mx-auto mb-6">
+                        <i data-lucide="target" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Success Stories</h3>
+                    <p class="text-gray-600 font-medium">
+                        Explore real-world case studies and success stories from organizations that achieved remarkable results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Blog Post -->
+    <section class="py-16 md:py-20 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-heading mb-12">Latest Article</h2>
+            
+            <div class="featured-blog-card">
+                <div class="blog-date">Published on November 9, 2025</div>
+                <h2 class="featured-blog-title">How AI-Powered Process Automation is Revolutionizing Business Operations in 2025</h2>
+                
+                <p class="featured-blog-excerpt">
+                    Artificial intelligence and process automation have become essential competitive tools in 2025. Unlike traditional automation, AI-driven systems learn, adapt, and continuously improve, handling complex decision-making and unstructured data. Organizations report dramatic benefits: 30-60% cost reductions, accelerated processing, and 70-90% error rate decreases. AI automation scales effortlessly without proportional cost increases, delivering transformative results across finance, healthcare, manufacturing, and customer service. While implementation requires addressing data quality, workforce adaptation, and governance challenges, successful deployment starts with identifying high-impact opportunities, prioritizing pilot projects, and building cross-functional teams. The competitive advantages are compelling—organizations acting now will lead their industries tomorrow.
+                </p>
+                
+                <div>
+                    <a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52/blog/how-ai-powered-process-automation-is-revolutionizi.html" class="btn-primary">
+                        Read Full Article
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Listing Section -->
+    <section class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-heading mb-12">More Articles Coming Soon</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Placeholder Blog Card 1 -->
+                <div class="blog-card">
+                    <div class="blog-date">Coming Soon</div>
+                    <h3 class="blog-title">The Future of Intelligent Automation in Enterprise Systems</h3>
+                    <p class="blog-excerpt">
+                        Explore emerging trends in enterprise automation, including advanced AI capabilities, integration with legacy systems, and strategies for scaling automation across large organizations.
+                    </p>
+                    <div>
+                        <span class="text-gray-500 font-medium text-sm">Article in preparation</span>
+                    </div>
+                </div>
+                
+                <!-- Placeholder Blog Card 2 -->
+                <div class="blog-card">
+                    <div class="blog-date">Coming Soon</div>
+                    <h3 class="blog-title">Cost-Benefit Analysis: Measuring ROI from AI Implementation</h3>
+                    <p class="blog-excerpt">
+                        Learn how to quantify the return on investment from AI and automation projects, including metrics, measurement frameworks, and real-world examples of significant cost savings.
+                    </p>
+                    <div>
+                        <span class="text-gray-500 font-medium text-sm">Article in preparation</span>
+                    </div>
+                </div>
+                
+                <!-- Placeholder Blog Card 3 -->
+                <div class="blog-card">
+                    <div class="blog-date">Coming Soon</div>
+                    <h3 class="blog-title">Overcoming Common Challenges in AI and Automation Adoption</h3>
+                    <p class="blog-excerpt">
+                        Discover practical solutions to overcome organizational resistance, technical challenges, and change management issues when implementing AI and automation initiatives.
+                    </p>
+                    <div>
+                        <span class="text-gray-500 font-medium text-sm">Article in preparation</span>
+                    </div>
+                </div>
+                
+                <!-- Placeholder Blog Card 4 -->
+                <div class="blog-card">
+                    <div class="blog-date">Coming Soon</div>
+                    <h3 class="blog-title">Industry-Specific Automation Solutions: Finance, Healthcare & Manufacturing</h3>
+                    <p class="blog-excerpt">
+                        Examine tailored automation approaches for different industries, including sector-specific challenges, regulatory considerations, and proven implementation strategies.
+                    </p>
+                    <div>
+                        <span class="text-gray-500 font-medium text-sm">Article in preparation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-20 md:py-28 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop');">
+            <div class="gradient-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-100 font-medium mb-10 max-w-2xl mx-auto">
+                    Learn more about how AI and intelligent automation can revolutionize your operations and drive sustainable growth.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52" class="btn-primary text-center">
+                        Back to Home
+                    </a>
+                    <a href="mailto:admin@admin.com" class="btn-secondary text-center">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="text-2xl font-bold text-white mb-4">
+                        <i data-lucide="zap" class="inline-block mr-2 text-[#FF5A5F]"></i>AI Consulting
+                    </div>
+                    <p class="text-gray-400 font-medium mb-6">
+                        Transforming businesses through intelligent automation and AI-driven solutions.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#FF5A5F] transition-colors duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-gray-300"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#FF5A5F] transition-colors duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-gray-300"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#FF5A5F] transition-colors duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-gray-300"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#FF5A5F] transition-colors duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-gray-300"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52#features" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Process Automation</a></li>
+                        <li><a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52#features" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">AI Integration</a></li>
+                        <li><a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52#benefits" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Cost Optimization</a></li>
+                        <li><a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52#about" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">About Us</a></li>
+                        <li><a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52#testimonials" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52/blog.html" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Blog</a></li>
+                        <li><a href="mailto:admin@admin.com" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Legal</h3>
+                    <ul class="space-y-3">
+                        <li><a href="privacy.html" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 font-medium mb-4 md:mb-0">
+                        &copy; 2025 AI Consulting Sydney. All rights reserved.
+                    </p>
+                    <div class="flex gap-6">
+                        <a href="privacy.html" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Privacy</a>
+                        <a href="terms.html" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Terms</a>
+                        <a href="https://test-acc-12349.github.io/ai-consulting-sydney-2025-11-09-1vc52/blog.html" class="text-gray-400 font-medium hover:text-[#FF5A5F] transition-colors duration-300">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
